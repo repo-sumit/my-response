@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Responses — Dropdown Enabled</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <style type="text/tailwindcss">
+    body { font-family: 'Roboto', sans-serif; }
+  </style>
+  <style>
+    body { min-height: max(884px, 100dvh); }
+    .collapse-panel { transition: max-height 240ms ease; }
+  </style>
+</head>
+<body class="bg-gray-50 pb-20">
+  <div class="container mx-auto px-4 py-6">
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-2xl font-bold text-gray-800">My Responses</h1>
+      <button class="p-2 rounded-full hover:bg-gray-200" aria-label="profile">
+        <span class="material-icons text-gray-600">person</span>
+      </button>
+    </header>
+
+    <div class="flex flex-col sm:flex-row items-center space-y-4 sm:space-y-0 sm:space-x-2 mb-4">
+      <div class="relative flex-grow w-full">
+        <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">search</span>
+        <input type="text" placeholder="Search responses..." class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <button class="p-2 border border-gray-300 rounded-lg hover:bg-gray-100 w-full sm:w-auto flex-shrink-0">
+        <span class="material-icons text-gray-600">filter_list</span>
+      </button>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
+      <div class="relative">
+        <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">calendar_today</span>
+        <input type="text" placeholder="From date" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+      <div class="relative">
+        <span class="material-icons absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">calendar_today</span>
+        <input type="text" placeholder="To date" class="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"/>
+      </div>
+    </div>
+
+    <div class="space-y-6">
+
+      <!-- CARD 1 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-sm font-medium text-gray-500">SCH_2025_001</p>
+              <h2 class="text-lg font-bold text-gray-800 mt-1">Annual School Infrastructure Audit</h2>
+              <p class="text-gray-600 mt-2 text-sm">Comprehensive assessment of school buildings, classrooms, toilets, drinking water, and playground facilities.</p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Hindi</span>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">English</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">In School</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Public</span>
+              </div>
+            </div>
+            <button
+              class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 shrink-0"
+              data-dropdown
+              data-target="panel-1"
+              aria-expanded="false">
+              <span class="material-icons text-base transition-transform" data-chevron>expand_more</span>
+              <span class="text-sm font-medium">Responses</span>
+            </button>
+          </div>
+        </div>
+        <div class="bg-blue-50 px-4 pb-4">
+          <!-- Collapsible panel -->
+          <div id="panel-1" class="collapse-panel max-h-0 overflow-hidden rounded-lg">
+            <div class="space-y-4 p-4 bg-blue-50 rounded-lg max-h-96 overflow-y-auto">
+              <div class="bg-white rounded-lg p-3 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                  <p class="text-sm text-gray-600 mb-2 sm:mb-0"><span class="font-bold">UDISE:</span> 12345678901</p>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center self-start sm:self-center">
+                    <span class="material-icons text-sm mr-1">hourglass_empty</span>Sync Pending
+                  </span>
+                </div>
+                <p class="text-xs text-gray-500 mb-3">Submitted Time: 2025-01-05 10:30 AM</p>
+                <div class="grid grid-cols-2 gap-2">
+                  <button class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                    <span class="material-icons mr-2">sync</span>Sync Now
+                  </button>
+                  <button class="w-full bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors">View Response</button>
+                </div>
+              </div>
+
+              <div class="bg-white rounded-lg p-3 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                  <p class="text-sm text-gray-600 mb-2 sm:mb-0"><span class="font-bold">UDISE:</span> 12345678902</p>
+                  <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center self-start sm:self-center">
+                    <span class="material-icons text-sm mr-1">check_circle</span>Sync Completed
+                  </span>
+                </div>
+                <p class="text-xs text-gray-500 mb-3">Last Synced: 2025-01-04 02:15 PM</p>
+                <button class="w-full bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors">View Response</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-sm font-medium text-gray-500">EDU_2025_002</p>
+              <h2 class="text-lg font-bold text-gray-800 mt-1">Teacher Training Program Evaluation</h2>
+              <p class="text-gray-600 mt-2 text-sm">Assessment of ongoing teacher professional development initiatives and their impact on classroom teaching.</p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Hindi</span>
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Gujarati</span>
+                <span class="bg-purple-100 text-purple-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Open</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Public</span>
+              </div>
+            </div>
+            <button
+              class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 shrink-0"
+              data-dropdown
+              data-target="panel-2"
+              aria-expanded="false">
+              <span class="material-icons text-base transition-transform" data-chevron>expand_more</span>
+              <span class="text-sm font-medium">Responses</span>
+            </button>
+          </div>
+        </div>
+        <div class="bg-blue-50 px-4 pb-4">
+          <!-- Collapsible panel -->
+          <div id="panel-2" class="collapse-panel max-h-0 overflow-hidden rounded-lg">
+            <div class="space-y-4 p-4 bg-blue-50 rounded-lg max-h-96 overflow-y-auto">
+              <div class="bg-white rounded-lg p-3 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                  <p class="text-sm text-gray-600 mb-2 sm:mb-0"><span class="font-bold">UDISE:</span> 34567890123</p>
+                  <span class="bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center self-start sm:self-center">
+                    <span class="material-icons text-sm mr-1">check_circle</span>Sync Completed
+                  </span>
+                </div>
+                <p class="text-xs text-gray-500 mb-3">Last Synced: 2025-01-04 11:00 AM</p>
+                <button class="w-full bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors">View Response</button>
+              </div>
+              <!-- Add more responses as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="p-4">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <p class="text-sm font-medium text-gray-500">SCH_2025_003</p>
+              <h2 class="text-lg font-bold text-gray-800 mt-1">Mid-Day Meal Quality Assessment</h2>
+              <p class="text-gray-600 mt-2 text-sm">Evaluation of nutritional quality, hygiene standards, and student satisfaction with school meal programs.</p>
+              <div class="flex flex-wrap gap-2 mt-3">
+                <span class="bg-blue-100 text-blue-800 text-xs font-medium px-2.5 py-0.5 rounded-full">English</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">In School</span>
+                <span class="bg-gray-100 text-gray-800 text-xs font-medium px-2.5 py-0.5 rounded-full">Public</span>
+              </div>
+            </div>
+            <button
+              class="inline-flex items-center gap-1 px-3 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50 shrink-0"
+              data-dropdown
+              data-target="panel-3"
+              aria-expanded="false">
+              <span class="material-icons text-base transition-transform" data-chevron>expand_more</span>
+              <span class="text-sm font-medium">Responses</span>
+            </button>
+          </div>
+        </div>
+        <div class="bg-blue-50 px-4 pb-4">
+          <!-- Collapsible panel -->
+          <div id="panel-3" class="collapse-panel max-h-0 overflow-hidden rounded-lg">
+            <div class="space-y-4 p-4 bg-blue-50 rounded-lg max-h-96 overflow-y-auto">
+              <div class="bg-white rounded-lg p-3 shadow-sm">
+                <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-2">
+                  <p class="text-sm text-gray-600 mb-2 sm:mb-0"><span class="font-bold">UDISE:</span> 23456789012</p>
+                  <span class="bg-yellow-100 text-yellow-800 text-xs font-semibold px-3 py-1 rounded-full flex items-center self-start sm:self-center">
+                    <span class="material-icons text-sm mr-1">hourglass_empty</span>Sync Pending
+                  </span>
+                </div>
+                <p class="text-xs text-gray-500 mb-3">Submitted Time: 2025-01-03 09:00 AM</p>
+                <div class="grid grid-cols-2 gap-2">
+                  <button class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-blue-600 transition-colors">
+                    <span class="material-icons mr-2">sync</span>Sync Now
+                  </button>
+                  <button class="w-full bg-gray-200 text-gray-800 font-bold py-2 px-4 rounded-lg flex items-center justify-center hover:bg-gray-300 transition-colors">View Response</button>
+                </div>
+              </div>
+              <!-- Add more responses as needed -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <footer class="fixed bottom-0 left-0 right-0 bg-white border-t border-gray-200 shadow-t">
+    <div class="flex justify-around items-center h-16">
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
+        <span class="material-icons">home</span>
+        <span class="text-xs">My Survey</span>
+      </a>
+      <a href="#" class="flex flex-col items-center text-blue-500">
+        <span class="material-icons">list_alt</span>
+        <span class="text-xs font-bold">My Response</span>
+      </a>
+      <a href="#" class="flex flex-col items-center text-gray-600 hover:text-blue-500">
+        <span class="material-icons">add_circle_outline</span>
+        <span class="text-xs">Add Survey</span>
+      </a>
+    </div>
+  </footer>
+
+  <script>
+    // Dropdown toggle logic for all survey cards
+    document.querySelectorAll('[data-dropdown]').forEach(function(btn) {
+      var targetId = btn.getAttribute('data-target');
+      var panel = document.getElementById(targetId);
+      var chevron = btn.querySelector('[data-chevron]');
+
+      btn.addEventListener('click', function() {
+        var expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+
+        // Toggle height and scrolling
+        if (expanded) {
+          panel.classList.add('max-h-0');
+          panel.classList.remove('max-h-96');
+          panel.classList.remove('overflow-y-auto');
+          chevron.style.transform = 'rotate(0deg)';
+        } else {
+          panel.classList.remove('max-h-0');
+          panel.classList.add('max-h-96');
+          panel.classList.add('overflow-y-auto');
+          chevron.style.transform = 'rotate(180deg)';
+        }
+      });
+    });
+  </script>
+</body>
+</html>
